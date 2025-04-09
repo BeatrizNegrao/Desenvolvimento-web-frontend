@@ -1,0 +1,19 @@
+<div class="d-flex flex-column col-2 mt-3">
+<p>Nome do segurado: </p>
+<input class="form-control" type="String" [(ngModel)]="nomeSegurado">
+
+<p>Sexo:(M/F) </p>
+<input class="form-control" type="String" [(ngModel)]="sexo">
+
+<p>Idade</p>
+<input class="form-control" type="number" [(ngModel)]="idade">
+
+<p>Valor do automóvel: </p>
+<input class="form-control" type="number" [(ngModel)]="valor">
+</div>
+
+<br>
+
+<button class="btn btn-primary" (click)="calcular()">Calcular</button>
+
+<p>Valor da apólice: {{calcular()}}</p>

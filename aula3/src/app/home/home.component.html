@@ -1,0 +1,18 @@
+<h1>Exemplo de interpolação: source to view</h1>
+<p>Número 1 = {{num1}}</p>
+<p>Número 1 = {{num1 + num2}}</p>
+
+
+<h1>Exemplo de Property binding: source to view</h1>
+<img [src]="urlImagem">
+
+<h1>Exemplo de Event binding: view to source</h1>
+<button (click)="somar()">Somar +1</button>
+<p>Número 2 = {{num2}}</p> <!-- interpolação: source to view -->
+
+<h1>Exemplo de Two way binding: [()] -> caixa de banana</h1>
+<input name="num2" [(ngModel)]="num2">
+
+
+
+

@@ -1,0 +1,21 @@
+<div class="d-flex flex-column col-2 mt-3">
+<p>Numero 1</p>
+<input class="form-control" type="number" [(ngModel)]="num1">
+
+<p>Numero 2</p>
+<input class="form-control" type="number" [(ngModel)]="num2">
+</div>
+
+<br>
+
+<button class="btn btn-primary" (click)="calcular()">Calcular</button>
+
+<p>Soma: {{soma}}</p>
+
+<p>Subtração: {{subtracao}}</p>
+
+
+<p>Multiplicação: {{multiplicacao}}</p>
+
+
+<p>Divisão: {{divisao}}</p> 
