@@ -1,0 +1,32 @@
+<form [formGroup]="form" (ngSubmit)="salvar()">
+    <label for="nome" class="form-label">Nome: </label>
+    <input type="text" formControlName="nome" class="form-control">
+    <div class="invalid" *ngIf="form.get('nome')?.invalid && form.get('nome')?.dirty || form.get('nome')?.touched">
+        <div *ngIf="form.get('nome')?.errors?.['required']">Nome é obrigatório</div>
+    </div>
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" class="form-control">
+    <div class="invalid" *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)">
+        <div *ngIf="form.get('email')?.errors?.['required']">E-mail é obrigatório</div>
+        <div *ngIf="form.get('email')?.errors?.['email']">E-mail não está no formato correto</div>
+    </div>
+
+    <label for="senha" class="form-label">Senha: </label>
+    <input type="password" formControlName="senha" class="form-control">
+    <div class="invalid" *ngIf="form.get('senha')?.invalid && form.get('senha')?.dirty || form.get('senha')?.touched">
+        <div *ngIf="form.get('senha')?.errors?.['required']">Senha é obrigatório</div>
+    </div>
+
+
+    <label for="senhaConfirm" class="form-label">Confirmação de Senha: </label>
+    <input type="password" formControlName="senhaConfirm" class="form-control">
+    <div class="invalid"
+        *ngIf="form.get('senhaConfirm')?.invalid && (form.get('senhaConfirm')?.dirty || form.get('senhaConfirm')?.touched)">
+        <div *ngIf="form.get('senhaConfirm')?.errors?.['required']">Confirmação de senha é obrigatória</div>
+        <div *ngIf="form.get('senhaConfirm')?.errors?.['minlength']">Confirmação deve ter no mínimo 6 caracteres</div>
+        <div *ngIf="form.get('senhaConfirm')?.errors?.['maxlength']">Confirmação deve ter no máximo 20 caracteres</div>
+    </div>
+
+    <button type="submit" [disabled]="!form.valid">Salvar</button>
+</form>

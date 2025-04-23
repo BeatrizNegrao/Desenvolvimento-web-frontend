@@ -15,6 +15,9 @@ import { TarefasComponent } from './tarefas/tarefas.component';
 import { ClienteDetalheComponent } from './cliente-detalhe/cliente-detalhe.component';
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { CadastroPessoaComponent } from './cadastro-pessoa/cadastro-pessoa.component';
+import { AtividadeFixacaoAc2Component } from './atividade-fixacao-ac2/atividade-fixacao-ac2.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -37,5 +40,8 @@ export const routes: Routes = [
     { path: 'detalhe/:id', component: ClienteDetalheComponent },
     { path: 'login', component: LoginComponent },
     { path: 'perfil/:email', component: PerfilComponent },
+    {path: 'cadastro-usuario', component: CadastroUsuarioComponent},
+    {path: 'cadastro-pessoa', component: CadastroPessoaComponent},
+    {path: 'atividade-fixacao', component: AtividadeFixacaoAc2Component},
     { path: '**', component: PaginaNaoEncontradaComponent }
 ];
