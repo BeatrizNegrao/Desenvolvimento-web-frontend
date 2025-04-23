@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TarefasComponent } from './tarefas.component';
 
-describe('TarefasComponent', () => {
-  let component: TarefasComponent;
-  let fixture: ComponentFixture<TarefasComponent>;
+import { MenuSuperiorComponent } from './menu-superior.component';
+
+describe('MenuSuperiorComponent', () => {
+  let component: MenuSuperiorComponent;
+  let fixture: ComponentFixture<MenuSuperiorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TarefasComponent]
+      imports: [MenuSuperiorComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TarefasComponent);
+    fixture = TestBed.createComponent(MenuSuperiorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

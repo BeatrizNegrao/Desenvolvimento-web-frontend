@@ -9,10 +9,14 @@ export class StorageService {
         const data = localStorage.getItem(key);
         return data ? JSON.parse(data) : null;
     }
+
     removeLocal(key: string) {
         localStorage.removeItem(key);
     }
+
     removeTodosLocal() {
         localStorage.clear();
     }
+
+
 }

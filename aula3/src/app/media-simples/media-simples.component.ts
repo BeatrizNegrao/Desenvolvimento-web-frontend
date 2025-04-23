@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import { StorageService } from '../services/localstorage.services';
+import { StorageService } from '../services/localStorageServices';
 import { CommonModule } from '@angular/common';
 
 @Component({

@@ -9,14 +9,25 @@ import {Tarefa} from '../models/Tarefa';
   templateUrl: './tarefas.component.html',
   styleUrl: './tarefas.component.css'
 })
-export class Tarefas {
+export class TarefasComponent {
+
+  descricao: string = "";
   concluida: boolean = true;
-  descricao: string='';
-   pessoas: Tarefa[] = [
-      {id: 1, descricao: 'Fazer lição do inglês', concluida: 'Sim'},
-      {id: 2, descricao: 'Estudar para prova da faculdade', concluida: 'Sim'},
-      {id: 3, descricao: 'Praticar lógica', concluida: 'Não'},
-      {id: 4, descricao: 'Praticar inglês', concluida: 'Não'},
-      {id: 5, descricao: 'Praticar esporte', concluida: 'Sim'}
-    ];
+
+  tarefas: Tarefa[] = [
+    {id: 1, descricao: 'Fazer lição do inglês', concluida: true},
+    {id: 2, descricao: 'Estudar para prova da faculdade', concluida: true},
+    {id: 3, descricao: 'Praticar lógica', concluida: true},
+    {id: 4, descricao: 'Praticar inglês', concluida: false},
+    {id: 5, descricao: 'Praticar esporte', concluida: false}
+  ];
+   
+    alterarStatus(t: Tarefa) {
+      t.concluida = !t.concluida;
+    }
 }
+
+
+
+  
+

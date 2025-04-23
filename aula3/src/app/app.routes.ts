@@ -13,6 +13,8 @@ import { IMCComponent } from './imc/imc.component';
 import { ExemploDiretivasComponent } from './exemplo-diretivas/exemplo-diretivas.component';
 import { TarefasComponent } from './tarefas/tarefas.component';
 import { ClienteDetalheComponent } from './cliente-detalhe/cliente-detalhe.component';
+import { LoginComponent } from './login/login.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -21,8 +23,8 @@ export const routes: Routes = [
     { path: 'mediaSimples', component: MediaSimplesComponent },
     { path: 'calcularJurosSimples', component: CalcularJurosSimplesComponent},
     { path: 'apolice', component: ApoliceComponent},
-    {path: 'conversor', component: ConversorTemperaturaComponent},
-    {path: 'imc', component: IMCComponent},
+    { path: 'conversor', component: ConversorTemperaturaComponent},
+    { path: 'imc', component: IMCComponent},
     {
         path: 'tela-pai', component: TelaPaiComponent,
         children: [
@@ -30,8 +32,10 @@ export const routes: Routes = [
             { path: 'tela-filho2', component: TelaFilho2Component }
         ]
     },
-    {path: 'exemplo-diretivas', component: ExemploDiretivasComponent },
-    {path: 'tarefas', component: TarefasComponent },
+    { path: 'exemplo-diretivas', component: ExemploDiretivasComponent },
+    { path: 'tarefas', component: TarefasComponent },
     { path: 'detalhe/:id', component: ClienteDetalheComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'perfil/:email', component: PerfilComponent },
     { path: '**', component: PaginaNaoEncontradaComponent }
 ];
