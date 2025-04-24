@@ -1,0 +1,36 @@
+<h1>Lista de Participantes</h1>
+<form [formGroup]="form" (ngSubmit)="salvar()">
+    <label for="nome" class="form-label">Nome: </label>
+    <input type="text" formControlName="nome" class="form-control">
+    <div class="invalid" *ngIf="form.get('nome')?.invalid && form.get('nome')?.dirty || form.get('nome')?.touched">
+        <div *ngIf="form.get('nome')?.errors?.['required']">Nome é obrigatório</div>
+    </div>
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" class="form-control">
+    <div class="invalid" *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)">
+        <div *ngIf="form.get('email')?.errors?.['required']">E-mail é obrigatório</div>
+        <div *ngIf="form.get('email')?.errors?.['email']">E-mail não está no formato correto</div>
+    </div>
+
+    <label for="cpf">CPF:</label>
+    <input id="cpf" type="text" formControlName="cpf" class="form-control">
+    <div class="invalid" *ngIf="form.get('cpf')?.invalid && (form.get('cpf')?.dirty || form.get('cpf')?.touched)">
+        <div *ngIf="form.get('cpf')?.errors?.['required']">CPF é obrigatório</div>
+    </div>
+
+    <label for="tipoIngresso">Tipo de ingresso:</label>
+    <select id="tipoIngresso" formControlName="tipoIngresso" class="form-control">
+      <option value="Padrao">Padrão</option>
+      <option value="VIP">VIP</option>
+      <option value="Estudante">Estudante</option>
+    </select>
+    <div class="invalid" *ngIf="form.get('tipoIngresso')?.invalid && (form.get('tipoIngresso')?.dirty || form.get('tipoIngresso')?.touched)">
+        <div *ngIf="form.get('tipoIngresso')?.errors?.['required']">Tipo de ingresso é obrigatório</div>
+    </div>
+
+
+    <button type="submit" [disabled]="!form.valid">Salvar</button>
+
+    {{participantes | json}}
+</form>

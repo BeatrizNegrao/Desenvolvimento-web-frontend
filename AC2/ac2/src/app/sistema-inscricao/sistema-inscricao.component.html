@@ -1,0 +1,43 @@
+<h1>Sistema de Inscrição para Conferência </h1>
+<form [formGroup]="form" (ngSubmit)="enviar()">
+    <div class="row">
+        <label for="evento">Evento: </label>
+        <select id="evento" formControlName="evento" class="form-control">
+            <option value="TechConf 2025">TechConf 2025</option>
+            <option value="Summit de Inovação">Summit de Inovação</option>
+            <option value="Angular World">Angular World</option>
+            <option value="Conexão Dev">Conexão Dev</option>
+        </select>
+        <div class="invalid"
+            *ngIf="form.get('evento')?.invalid && (form.get('evento')?.dirty || form.get('evento')?.touched)">
+            <div *ngIf="form.get('evento')?.errors?.['required']">Evento é obrigatório</div>
+        </div>
+
+        <label for="modalidade">Modalidade: </label>
+        <select id="modalidade" formControlName="modalidade" class="form-control">
+          <option value="Presencial">Presencial</option>
+          <option value="Online">Online</option>
+        </select>
+        <div class="invalid"
+            *ngIf="form.get('modalidade')?.invalid && (form.get('modalidade')?.dirty || form.get('modalidade')?.touched)">
+            <div *ngIf="form.get('modalidade')?.errors?.['required']">Modalidade é obrigatório</div>
+        </div>
+
+        <label for="dataIda">Data de início:</label>
+        <input id="dataInicio" type="date" formControlName="dataInicio" class="form-control">
+        <div class="invalid"
+            *ngIf="form.get('dataInicio')?.invalid && (form.get('dataInicio')?.dirty || form.get('dataInicio')?.touched)">
+            <div *ngIf="form.get('dataInicio')?.errors?.['required']">Data de início é obrigatória</div>
+        </div>
+
+        <label for="dataTermino">Data de término:</label>
+        <input id="dataTermino" type="date" formControlName="dataTermino" class="form-control">
+        <div class="invalid"
+            *ngIf="form.get('dataTermino')?.invalid && (form.get('dataTermino')?.dirty || form.get('dataTermino')?.touched)">
+            <div *ngIf="form.get('dataTermino')?.errors?.['required']">Data de término é obrigatória</div>
+        </div>
+
+        <button type="submit" [disabled]="!form.valid">Enviar</button>
+    </div>
+    {{ sistemaInscricao | json}}
+</form>
